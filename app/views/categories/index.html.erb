@@ -1,0 +1,25 @@
+<h1>Categories</h1>
+<%= link_to("Add new category", {:action => 'new'})%>
+<p>Number of categories: <%= @categories.size %></p>
+<table>
+    <tr>
+    	<th>Position</th>
+    	<th>Name</th>
+    	<th>Visibility</th>
+    	<th>Page</th>
+    	<th>Actions</th>
+    </tr>
+<% @categories.each do |category|%>
+    <tr>
+    	<th><%= category.position %></th>
+    	<th><%= category.name %></th>
+    	<th><%= category.visibility ? 'Yes' : 'No' %></th>
+    	<th><%= category.pages.size %></th>
+    	<th>
+    		<%= link_to "Show", "#" %>
+    		<%= link_to "Edit", "#" %>
+    		<%= link_to "Delete", "#" %>
+    	</th>
+    </tr>
+<% end %>
+</table>
