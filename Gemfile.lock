@@ -26,6 +26,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    bcrypt (3.1.7)
     builder (3.1.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -97,6 +98,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   jbuilder (~> 1.2)
   jquery-rails
   paperclip (~> 4.2.0)
