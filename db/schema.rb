@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711200657) do
+ActiveRecord::Schema.define(version: 20140711201815) do
 
   create_table "articles", force: true do |t|
     t.integer  "page_id"
@@ -35,6 +35,19 @@ ActiveRecord::Schema.define(version: 20140711200657) do
     t.datetime "updated_at"
   end
 
+  create_table "galleries", force: true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "visibility",         default: false
+    t.text     "description"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pages", force: true do |t|
     t.integer  "category_id"
     t.string   "name"
@@ -45,6 +58,20 @@ ActiveRecord::Schema.define(version: 20140711200657) do
   end
 
   add_index "pages", ["category_id"], name: "index_pages_on_category_id"
+
+  create_table "photos", force: true do |t|
+    t.integer  "gallery_id"
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "visibility",         default: true
+    t.string   "description"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name",      limit: 20
