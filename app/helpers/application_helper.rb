@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-	def status_od_visibility(boolean, options={})
+	def status_of_visibility(boolean, options={})
 		  options[:true_text] ||= ' '
 		  options[:false_text] ||= ' '
 		if boolean

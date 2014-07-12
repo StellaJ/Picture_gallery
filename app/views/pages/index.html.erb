@@ -1,0 +1,30 @@
+<div class="hero-unit">
+
+<h1>Pages</h1>
+<%= link_to("Add new page", {:action => 'new'}, :class => 'btn btn-mini btn-primary')%>
+<p style="text-align: right;">Number of pages: <%= @pages.size %></p>
+<table class="table table-striped">
+    <tr class="info">
+    	<th>Position</th>
+        <th>Name of category</th>
+    	<th>Name of page</th>
+    	<th>Visibility</th>
+    	<th>Article</th>
+    	<th>Actions</th>
+    </tr>
+<% @pages.each do |page|%>
+    <tr>
+        <td><%= page.position %></td>
+    	<td><%= page.category.name %></td>
+    	<td><%= page.name %></td>
+    	<td class="center"><%= status_of_visibility(page.visibility) %></td>
+    	<td class="center"><%= page.articles.size %></td>
+    	<td class="actions">
+    		<%= link_to "Show", {:action => 'show', :id => page.id}, :class => "btn btn-default btn-xs" %>
+    		<%= link_to "Edit", {:action => 'edit', :id => page.id}, :class =>"btn btn-default btn-xs" %>
+    		<%= link_to "Delete", {:action => 'delete', :id => page.id}, :class =>"btn btn-danger btn-xs" %>
+    	</td>
+    </tr>
+<% end %>
+</table>
+</div>

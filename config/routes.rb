@@ -1,4 +1,9 @@
 PictureGallery::Application.routes.draw do
+  get "pages/index"
+  get "pages/new"
+  get "pages/edit"
+  get "pages/show"
+  get "pages/delete"
 get "categories/index"
 match ':controller(/:action(/:id))', :via => [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.

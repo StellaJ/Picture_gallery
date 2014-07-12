@@ -1,0 +1,22 @@
+<table class="table table-striped">
+	<tr>
+	    <th><%= f.label(:category_id, "Category") %></th>
+	    <td><%= f.select(:category_id, @category.map{|m| [m.name, m.id]}, :class => 'form-control') %></td>
+    </tr>
+	<tr>
+	    <th><%= f.label(:name) %></th>
+	    <td><%= f.text_field(:name, :class => 'form-control') %></td>
+    </tr>
+    <tr>
+	    <th><%= f.label(:position) %></th>
+	    <td><%= f.select(:position, 1..@counter, :class => 'form-control') %></td>
+    </tr>
+    <tr>
+	    <th><%= f.label(:visibility, "It is visible?") %></th>
+	    <td><%= f.check_box(:visibility) %></td>
+    </tr>
+    <tr>
+	    <th><%= f.label(:created_at) %></th>
+	    <td><%= f.datetime_select(:created_at, :class => 'form-control') %></td>
+    </tr>
+</table>
