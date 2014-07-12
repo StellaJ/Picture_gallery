@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PictureGallery</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+	<% if !flash[:notice].blank? %>
+	<div class="alert alert-succes" style="text-align: center;">
+	  <%= flash[:notice] %>
+	 </div>
+	<% end %>
+<%= yield %>
+</div>
+
+<div id="footer">
+	<div class="container">
+		<p class="text-muted">
+			by Stella 2014 &copy; <a href="https://github.com/StellaJ/Picture_gallery">https://github.com/StellaJ/Picture_gallery</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>

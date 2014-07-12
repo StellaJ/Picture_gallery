@@ -1,11 +1,14 @@
+<div class="hero-unit">
 <h1>New category</h1>
-<%= link_to("Back", {:action => 'index'})%>
+
 <%= form_for(:category, :url=>{:action=> 'create'}) do |f| %>
 <%= render(:partial => "form", :locals => {:f => f}) %>
 
 
-<div>
-	<%= submit_tag 'Submit' %>
+<div style="text-align: center;">
+	<%= link_to "Back", {:action => 'index'}, :class => 'btn btn-warning' %>
+	<%= submit_tag 'Submit', :class => 'btn btn-primary' %>
 </div>
 
 <% end %>
+</div>
