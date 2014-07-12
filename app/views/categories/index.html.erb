@@ -15,7 +15,7 @@
     <tr>
     	<td><%= category.position %></td>
     	<td><%= category.name %></td>
-    	<td class="center"><%= status_od_visibility(category.visibility) %></td>
+    	<td class="center"><%= status_of_visibility(category.visibility) %></td>
     	<td class="center"><%= category.pages.size %></td>
     	<td class="actions">
     		<%= link_to "Show", {:action => 'show', :id => category.id}, :class => "btn btn-default btn-xs" %>
