@@ -1,0 +1,39 @@
+<% bug(@articles)%>
+
+<table class="table table-striped">
+	<tr>
+	    <th><%= f.label(:page_id, "Page") %></th>
+	    <td><%= f.select(:page_id, @page.map{|m| [m.name, m.id]}, :class => 'form-control') %>
+	    </td>
+    </tr>
+	<tr>
+	    <th><%= f.label(:name) %></th>
+	    <td><%= f.text_field(:name, :class => 'form-control') %></td>
+    </tr>
+    <tr>
+	    <th><%= f.label(:position) %></th>
+	    <td><%= f.select(:position, 1..@counter, :class => 'form-control') %></td>
+    </tr>
+    <tr>
+	    <th><%= f.label(:visibility, "It is visible?") %></th>
+	    <td><%= f.check_box(:visibility) %></td>
+    </tr>
+    <% if !@article.photo.blank? %>
+    <tr>
+	    <th>Photo:</th>
+	    <td><%= image_tag(@article.photo) %></td>
+    </tr>
+    <% end %>
+    <tr>
+	    <th><%= f.label(:photo) %></th>
+	    <td><%= f.file_field(:photo) %></td>
+    </tr>
+    <tr>
+	    <th><%= f.label(:created_at) %></th>
+	    <td><%= f.datetime_select(:created_at, :class => 'form-control') %></td>
+    </tr>
+    <tr>
+	    <th><%= f.label(:content) %></th>
+	    <td><%= f.text_area(:content, :class => 'form-control') %></td>
+    </tr>
+</table>

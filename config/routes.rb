@@ -1,4 +1,9 @@
 PictureGallery::Application.routes.draw do
+  get "articles/index"
+  get "articles/new"
+  get "articles/edit"
+  get "articles/show"
+  get "articles/delete"
   get "pages/index"
   get "pages/new"
   get "pages/edit"
