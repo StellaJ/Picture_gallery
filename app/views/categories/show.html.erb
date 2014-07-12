@@ -1,2 +1,29 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1>Show category</h1>
+<%= link_to("Back", {:action => 'index'})%>
+
+<table>
+	<tr>
+	    <th>Name</th>
+	    <td><%= @category.name %></td>
+    </tr>
+    <tr>
+	    <th>Position</th>
+	    <td><%= @category.position %></td>
+    </tr>
+    <tr>
+	    <th>It is visible?</th>
+	    <td><%= @category.visibility ? 'Yes' : 'No' %></td>
+    </tr>
+     <tr>
+	    <th>Created:</th>
+	    <td><%= @category.created_at %></td>
+    </tr>
+     <tr>
+	    <th>Update:</th>
+	    <td><%= @category.updated_at %></td>
+    </tr>
+</table>
+
+
+
+

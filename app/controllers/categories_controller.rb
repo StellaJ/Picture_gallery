@@ -22,15 +22,34 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @category = Category.find(params[:id])
   end
 
   def edit
+    @category = Category.find(params[:id])
+    @counter = Category.count
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update_attributes(category_params)
+      redirect_to(:action=>'show', :id => @category.id)
+    else
+      @counter = Category.count
+      render('edit')
+    end
   end
 
   def delete
+    @category = Category.find(params[:id])
+  end
+
+  def sakujo_suru
+    category = Category.find(params[:id]).destroy
+    redirect_to(:action=>'index')
   end
 
   def category_params
-    params.require(:category).permit(:name, :position, :visibility)
+    params.require(:category).permit(:name, :position, :visibility, :created_at)
   end
 end

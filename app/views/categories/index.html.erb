@@ -16,9 +16,9 @@
     	<th><%= category.visibility ? 'Yes' : 'No' %></th>
     	<th><%= category.pages.size %></th>
     	<th>
-    		<%= link_to "Show", "#" %>
-    		<%= link_to "Edit", "#" %>
-    		<%= link_to "Delete", "#" %>
+    		<%= link_to "Show", {:action => 'show', :id => category.id} %>
+    		<%= link_to "Edit", {:action => 'edit', :id => category.id} %>
+    		<%= link_to "Delete", {:action => 'delete', :id => category.id} %>
     	</th>
     </tr>
 <% end %>
