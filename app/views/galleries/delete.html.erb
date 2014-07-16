@@ -1,0 +1,17 @@
+<div class="hero-unit">
+<h1>Delete gallery</h1>
+
+<%= form_for(:gallery, :url=>{:action=> 'sakujo_suru', :id => @gallery.id}) do |f| %>
+
+<p>Are you shure you want delete this gallery?</p>
+
+<p><%= @gallery.name %></p>
+
+<div style="text-align: center;">
+	<%= link_to "Back", {:action => 'index'}, :class => 'btn btn-primary'%>
+	<%= submit_tag 'Delete', :class => 'btn btn-danger' %>
+</div>
+
+
+<% end %>
+</div>

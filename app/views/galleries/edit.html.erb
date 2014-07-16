@@ -1,0 +1,13 @@
+<div class="hero-unit">
+<h1>Edit gallery: <%= @gallery.name %></h1>
+
+<%= form_for(:gallery, :url=>{:action=> 'update', :id => @gallery.id}) do |f| %>
+<%= render(:partial => "form", :locals => {:f => f}) %>
+
+<div style="text-align: center;">
+	<%= link_to "Back", {:action => 'index'}, :class => 'btn btn-warning'%>
+	<%= submit_tag 'Update', :class => 'btn btn-primary' %>
+</div>
+
+<% end %>
+</div>

@@ -1,0 +1,40 @@
+<div class="hero-unit">
+<h1>Show gallery</h1>
+
+
+<table class="table table-striped">
+
+	<tr>
+	    <th>Name</th>
+	    <td><%= @galleries.name %></td>
+    </tr>
+    <tr>
+	    <th>Position</th>
+	    <td><%= @galleries.position %></td>
+    </tr>
+    <tr>
+	    <th>It is visible?</th>
+	    <td><%= @galleries.visibility ? 'Yes' : 'No' %></td>
+    </tr>
+     <tr>
+	    <th>Photo:</th>
+	    <td><%= image_tag(@galleries.photo) %></td>
+    </tr>
+    <tr>
+	    <th>Description:</th>
+	    <td><%= @galleries.description %></td>
+    </tr>
+     <tr>
+	    <th>Created:</th>
+	    <td><%= @galleries.created_at %></td>
+    </tr>
+     <tr>
+	    <th>Update:</th>
+	    <td><%= @galleries.updated_at %></td>
+    </tr>
+</table>
+<div style="text-align: center;">
+	<%= link_to "Back", {:action => 'index'}, :class => 'btn btn-primary' %>
+</div>
+
+</div>
