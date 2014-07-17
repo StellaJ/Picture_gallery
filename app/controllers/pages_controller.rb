@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
 
   layout 'admin'
-
+  
+  before_action :check_logon
+  
   def index
     @pages = Page.sort
   end

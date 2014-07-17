@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
 
   layout 'admin'
   
+   before_action :check_logon
+   
   def index
     @articles = Article.sort
   end
