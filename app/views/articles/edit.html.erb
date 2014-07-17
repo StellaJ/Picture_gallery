@@ -1,7 +1,7 @@
 <div class="hero-unit">
-<h1>Edit article: <%= @article.name %></h1>
+<h1>Edit article: <%= @articles.name %></h1>
 
-<%= form_for(:article, :url=>{:action=> 'update', :id => @article.id}) do |f| %>
+<%= form_for(:articles, :url=>{:action=> 'update', :id => @articles.id}) do |f| %>
 <%= render(:partial => "form", :locals => {:f => f}) %>
 
 <div style="text-align: center;">

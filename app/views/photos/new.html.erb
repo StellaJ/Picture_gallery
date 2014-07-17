@@ -1,2 +1,14 @@
-<h1>Photos#new</h1>
-<p>Find me in app/views/photos/new.html.erb</p>
+<div class="hero-unit">
+<h1>New photo</h1>
+
+<%= form_for(:photos, :url=>{:action=> 'create'}) do |f| %>
+<%= render(:partial => "form", :locals => {:f => f}) %>
+
+
+<div style="text-align: center;">
+	<%= link_to "Back", {:action => 'index'}, :class => 'btn btn-warning' %>
+	<%= submit_tag 'Submit', :class => 'btn btn-primary' %>
+</div>
+
+<% end %>
+</div>

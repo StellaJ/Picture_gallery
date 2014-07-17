@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
 
   layout 'admin'
-
+  
   def index
     @articles = Article.sort
   end
-
+  
   def new
     @articles = Article.new({:name => "Title?"})
     @page = Page.order('position ASC')
@@ -25,16 +25,16 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @articles = Article.find(params[:id])
     @page = Page.order('position ASC')
     @counter = Article.count
   end
 
   def update
-    @article = Article.find(params[:id])
-    if @article.update_attributes(article_params)
+    @articles = Article.find(params[:id])
+    if @articles.update_attributes(article_params)
        flash[:notice] = "Article was successfully updated"
-      redirect_to(:action=>'show', :id => @article.id)
+      redirect_to(:action=>'show', :id => @articles.id)
     else
       @counter = Article.count
       @page = Page.order('position ASC')
@@ -47,16 +47,16 @@ class ArticlesController < ApplicationController
   end
 
   def delete
-    @article = Article.find(params[:id])
+    @articles = Article.find(params[:id])
   end
 
   def sakujo_suru
-    article = Article.find(params[:id]).destroy
-     flash[:notice] = "Article '#{article.name}' was successfully deleted"
+    articles = Article.find(params[:id]).destroy
+     flash[:notice] = "Article '#{articles.name}' was successfully deleted"
     redirect_to(:action=>'index')
   end
 
   def article_params
-    params.require(:article).permit(:name, :position, :visibility, :created_at, :page_id, :photo)
+    params.require(:articles).permit(:name, :position, :visibility, :created_at, :page_id, :photo)
   end
 end

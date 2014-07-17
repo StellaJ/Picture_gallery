@@ -1,11 +1,11 @@
 <div class="hero-unit">
 <h1>Delete page</h1>
 
-<%= form_for(:page, :url=>{:action=> 'sakujo_suru', :id => @page.id}) do |f| %>
+<%= form_for(:pages, :url=>{:action=> 'sakujo_suru', :id => @pages.id}) do |f| %>
 
 <p>Are you shure you want delete this page?</p>
 
-<p><%= @page.name %></p>
+<p><%= @pages.name %></p>
 
 <div style="text-align: center;">
 	<%= link_to "Back", {:action => 'index'}, :class => 'btn btn-primary'%>

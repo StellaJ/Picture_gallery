@@ -1,2 +1,17 @@
-<h1>Photos#delete</h1>
-<p>Find me in app/views/photos/delete.html.erb</p>
+<div class="hero-unit">
+<h1>Delete photo</h1>
+
+<%= form_for(:photos, :url=>{:action=> 'sakujo_suru', :id => @photos.id}) do |f| %>
+
+<p>Are you shure you want delete this photo?</p>
+
+<p><%= @photos.name %></p>
+
+<div style="text-align: center;">
+	<%= link_to "Back", {:action => 'index'}, :class => 'btn btn-primary'%>
+	<%= submit_tag 'Delete', :class => 'btn btn-danger' %>
+</div>
+
+
+<% end %>
+</div>

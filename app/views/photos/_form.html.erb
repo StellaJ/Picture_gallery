@@ -1,9 +1,9 @@
-<% bug(@articles)%>
+<% bug(@photos)%>
 
 <table class="table table-striped">
 	<tr>
-	    <th><%= f.label(:page_id, "Page") %></th>
-	    <td><%= f.select(:page_id, @page.map{|m| [m.name, m.id]}, :class => 'form-control') %>
+	    <th><%= f.label(:gallery_id, "Gallery") %></th>
+	    <td><%= f.select(:gallery_id, @gallery.map{|g| [g.name, g.id]}, :class => 'form-control') %>
 	    </td>
     </tr>
 	<tr>
@@ -18,10 +18,10 @@
 	    <th><%= f.label(:visibility, "It is visible?") %></th>
 	    <td><%= f.check_box(:visibility) %></td>
     </tr>
-    <% if !@articles.photo.blank? %>
+    <% if !@photos.photo.blank? %>
     <tr>
 	    <th>Photo:</th>
-	    <td><%= image_tag(@articles.photo) %></td>
+	    <td><%= image_tag(@photos.photo) %></td>
     </tr>
     <% end %>
     <tr>
@@ -33,7 +33,7 @@
 	    <td><%= f.datetime_select(:created_at, :class => 'form-control') %></td>
     </tr>
     <tr>
-	    <th><%= f.label(:content) %></th>
-	    <td><%= f.text_area(:content, :class => 'form-control') %></td>
+	    <th><%= f.label(:description) %></th>
+	    <td><%= f.text_area(:description, :class => 'form-control') %></td>
     </tr>
 </table>

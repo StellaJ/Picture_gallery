@@ -23,15 +23,15 @@ class GalleriesController < ApplicationController
   end
 
   def edit
-    @gallery = Gallery.find(params[:id])
+    @galleries = Gallery.find(params[:id])
     @counter = Gallery.count
   end
 
   def update
-    @gallery = Gallery.find(params[:id])
-    if @gallery.update_attributes(gallery_params)
+    @galleries = Gallery.find(params[:id])
+    if @galleries.update_attributes(gallery_params)
        flash[:notice] = "Gallery was successfully updated"
-      redirect_to(:action=>'show', :id => @gallery.id)
+      redirect_to(:action=>'show', :id => @galleries.id)
     else
       @counter = Gallery.count
       render('edit')
@@ -43,16 +43,16 @@ class GalleriesController < ApplicationController
   end
 
   def delete
-    @gallery = Gallery.find(params[:id])
+    @galleries = Gallery.find(params[:id])
   end
 
   def sakujo_suru
-    gallery = Gallery.find(params[:id]).destroy
-     flash[:notice] = "Gallery '#{gallery.name}' was successfully deleted"
+    galleries = Gallery.find(params[:id]).destroy
+     flash[:notice] = "Gallery '#{galleries.name}' was successfully deleted"
     redirect_to(:action=>'index')
   end
 
   def gallery_params
-     params.require(:gallery).permit(:name, :position, :visibility, :description, :photo)
+     params.require(:galleries).permit(:name, :position, :visibility, :description, :photo)
   end
 end

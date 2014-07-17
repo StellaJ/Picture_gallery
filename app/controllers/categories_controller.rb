@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @category = Category.new(:name => "Name of the category:")
+    @categories = Category.new(:name => "Name of the category:")
     @counter = Category.count + 1
   end
 
@@ -23,19 +23,19 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @categories = Category.find(params[:id])
   end
 
   def edit
-    @category = Category.find(params[:id])
+    @categories = Category.find(params[:id])
     @counter = Category.count
   end
 
   def update
-    @category = Category.find(params[:id])
-    if @category.update_attributes(category_params)
+    @categories = Category.find(params[:id])
+    if @categories.update_attributes(category_params)
        flash[:notice] = "Category was successfully updated"
-      redirect_to(:action=>'show', :id => @category.id)
+      redirect_to(:action=>'show', :id => @categories.id)
     else
       @counter = Category.count
       render('edit')
@@ -43,16 +43,16 @@ class CategoriesController < ApplicationController
   end
 
   def delete
-    @category = Category.find(params[:id])
+    @categories = Category.find(params[:id])
   end
 
   def sakujo_suru
-    category = Category.find(params[:id]).destroy
+    categories = Category.find(params[:id]).destroy
      flash[:notice] = "Category was successfully deleted"
     redirect_to(:action=>'index')
   end
 
   def category_params
-    params.require(:category).permit(:name, :position, :visibility, :created_at)
+    params.require(:categories).permit(:name, :position, :visibility, :created_at)
   end
 end

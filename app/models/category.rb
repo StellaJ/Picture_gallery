@@ -1,7 +1,7 @@
 class Category < ActiveRecord::Base
 	has_many :pages
 
-	validates :name, presence: true, length: {minimum: 50, allow_blank: true}
+	validates :name, presence: true, length: {maximum: 50, allow_blank: true}
 
 	scope :visibility, -> {where(:visibility => true)}
 	scope :notvisibility, -> {where(:visibility => false)}

@@ -1,2 +1,44 @@
-<h1>Photos#show</h1>
-<p>Find me in app/views/photos/show.html.erb</p>
+<div class="hero-unit">
+<h1>Show photo</h1>
+
+
+<table class="table table-striped">
+
+	<tr>
+	    <th>Gallery:</th>
+	    <td><%= @photos.gallery.name %></td>
+    </tr>
+	<tr>
+	    <th>Name</th>
+	    <td><%= @photos.name %></td>
+    </tr>
+    <tr>
+	    <th>Position</th>
+	    <td><%= @photos.position %></td>
+    </tr>
+    <tr>
+	    <th>It is visible?</th>
+	    <td><%= @photos.visibility ? 'Yes' : 'No' %></td>
+    </tr>
+     <tr>
+	    <th>Created:</th>
+	    <td><%= @photos.created_at %></td>
+    </tr>
+     <tr>
+	    <th>Update:</th>
+	    <td><%= @photos.updated_at %></td>
+    </tr>
+    <tr>
+	    <th>Photo:</th>
+	    <td><%= image_tag(@photos.photo) %></td>
+    </tr>
+    <tr>
+	    <th>Mini-photo:</th>
+	    <td><%= image_tag(@photos.photo.url(:thumb)) %></td>
+    </tr>
+</table>
+<div style="text-align: center;">
+	<%= link_to "Back", {:action => 'index'}, :class => 'btn btn-primary' %>
+</div>
+
+</div>

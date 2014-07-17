@@ -1,7 +1,7 @@
 <div class="hero-unit">
 <h1>Edit category</h1>
 
-<%= form_for(:category, :url=>{:action=> 'update', :id => @category.id}) do |f| %>
+<%= form_for(:categories, :url=>{:action=> 'update', :id => @categories.id}) do |f| %>
 <%= render(:partial => "form", :locals => {:f => f}) %>
 
 <div style="text-align: center;">

@@ -5,23 +5,23 @@
 <table class="table table-striped">
 	<tr>
 	    <th>Name</th>
-	    <td><%= @category.name %></td>
+	    <td><%= @categories.name %></td>
     </tr>
     <tr>
 	    <th>Position</th>
-	    <td><%= @category.position %></td>
+	    <td><%= @categories.position %></td>
     </tr>
     <tr>
 	    <th>It is visible?</th>
-	    <td><%= @category.visibility ? 'Yes' : 'No' %></td>
+	    <td><%= @categories.visibility ? 'Yes' : 'No' %></td>
     </tr>
      <tr>
 	    <th>Created:</th>
-	    <td><%= @category.created_at %></td>
+	    <td><%= @categories.created_at %></td>
     </tr>
      <tr>
 	    <th>Update:</th>
-	    <td><%= @category.updated_at %></td>
+	    <td><%= @categories.updated_at %></td>
     </tr>
 </table>
 <div style="text-align: center;">

@@ -1,25 +1,7 @@
 PictureGallery::Application.routes.draw do
-  get "photos/index"
-  get "photos/new"
-  get "photos/edit"
-  get "photos/show"
-  get "photos/delete"
-  get "galleries/index"
-  get "galleries/new"
-  get "galleries/edit"
-  get "galleries/show"
-  get "galleries/delete"
-  get "articles/index"
-  get "articles/new"
-  get "articles/edit"
-  get "articles/show"
-  get "articles/delete"
-  get "pages/index"
-  get "pages/new"
-  get "pages/edit"
-  get "pages/show"
-  get "pages/delete"
-get "categories/index"
+  
+root "categories#index"
+get 'admin', :to => "access#index"
 match ':controller(/:action(/:id))', :via => [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

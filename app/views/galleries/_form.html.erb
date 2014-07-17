@@ -14,10 +14,10 @@
 	    <th><%= f.label(:visibility, "It is visible?") %></th>
 	    <td><%= f.check_box(:visibility) %></td>
     </tr>
-    <% if !@gallery.photo.blank? %>
+    <% if !@galleries.photo.blank? %>
     <tr>
 	    <th>Photo:</th>
-	    <td><%= image_tag(@gallery.photo) %></td>
+	    <td><%= image_tag(@galleries.photo) %></td>
     </tr>
     <% end %>
     <tr>
