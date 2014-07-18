@@ -1,0 +1,13 @@
+<div class="hero-unit">
+<h1>Edit user: <%= @user.user %></h1>
+
+<%= form_for(:user, :url=>{:action=> 'update', :id => @user.id}) do |f| %>
+<%= render(:partial => "form", :locals => {:f => f}) %>
+
+<div style="text-align: center;">
+	<%= link_to "Back", {:action => 'index'}, :class => 'btn btn-warning'%>
+	<%= submit_tag 'Update', :class => 'btn btn-primary' %>
+</div>
+
+<% end %>
+</div>

@@ -1,0 +1,17 @@
+<div class="hero-unit">
+<h1>Delete user</h1>
+
+<%= form_for(:user, :url=>{:action=> 'sakujo_suru', :id => @user.id}) do |f| %>
+
+<p>Are you shure you want delete this user?</p>
+
+<p><%= @user.user %></p>
+
+<div style="text-align: center;">
+	<%= link_to "Back", {:action => 'index'}, :class => 'btn btn-primary'%>
+	<%= submit_tag 'Delete', :class => 'btn btn-danger' %>
+</div>
+
+
+<% end %>
+</div>
