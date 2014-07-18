@@ -5,7 +5,7 @@ How to start:
 Download from github: 
 
 
-git clone https://@github.com:StellaJ/Picture_gallery.git
+git clone https://github.com/StellaJ/Picture_gallery.git
 
 
 Run the bundle command to install it.

@@ -1,10 +1,6 @@
 PictureGallery::Application.routes.draw do
 
-  get "users/index"
-  get "users/edit"
-  get "users/new"
-  get "users/delete"
-root "categories#index"
+root "access#index"
    get 'admin', :to => "access#index"
   #get "test/index"
     match ':controller(/:action(/:id))', :via => [:get, :post]
